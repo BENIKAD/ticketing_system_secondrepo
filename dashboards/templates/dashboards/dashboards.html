@@ -12,75 +12,10 @@
 
 <!-- MAIN CONTENT -->
 <div class="main">
-
-
     <div class="main-content board">
         <div class="row">
             <div class="col-12">
                 <div class="box card-box">
-                    {% comment %} <div class="icon-box bg-color-1">
-                        <div class="icon bg-icon-1">
-                            <i class="bx bxs-bell bx-tada"></i>
-                        </div>
-                        <div class="content">
-                            <h5 class="title-box">Notification</h5>
-                            <p class="color-1 mb-0 pt-4">5 Unread notification</p>
-                        </div> 
-                    </div> {% endcomment %}
-                    {% comment %} <div class="icon-box bg-color-2">
-                        <div class="icon bg-icon-2">
-                            <i class='bx bxs-message-rounded'></i>
-                        </div>
-                         <div class="content click-c">
-                            <h5 class="title-box">Message</h5>
-                            <p class="color-2 mb-0 pt-4">5 Unread notification</p>
-                        </div> 
-                        <div class="notification-list card">
-                             <div class="top box-header">
-                                <h5>Notification</h5>
-
-                            </div> 
-                            <div class="pd-1r">
-                                <div class="divider"></div>
-                            </div>
-
-                            <div class="box-body">
-                                <ul class="list">
-                                    <li class="d-flex no-seen">
-                                        <div class="img-mess"><img class="mr-14" src="./images/avatar/avt-1.png" alt="avt"></div>
-                                        <div class="info">
-                                            <a href="#" class="font-w600 mb-0 color-primary">Elizabeth Holland</a>
-                                            <p class="pb-0 mb-0 line-h14 mt-6">Proin ac quam et lectus vestibulum</p>
-                                        </div>
-                                    </li>
-
-                                    <li class="d-flex">
-                                        <div class="img-mess"><img class="mr-14" src="./images/avatar/avt-1.png" alt="avt"></div>
-                                        <div class="info">
-                                            <a href="#" class="font-w600 mb-0 color-primary">Elizabeth Holland</a>
-                                            <p class="pb-0 mb-0 line-h14 mt-6">Proin ac quam et lectus vestibulum</p>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                                <div class="btn-view">
-                                    <a class="font-w600 h5" href="message.html">View All</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div> {% endcomment %}
-                    {% comment %} <div class="icon-box bg-color-3">
-                        <a class="create d-flex" href="calendar.html">
-                            <div class="icon bg-icon-3">
-                                <i class="bx bx-calendar"></i>
-                            </div>
-                            <div class="content">
-                                <h5 class="title-box">Calendar</h5>
-                                <p class="color-3 mb-0 pt-4">5 Unread notification</p>
-                            </div>
-                        </a>
-                    </div> {% endcomment %}
                     <div class="icon-box bg-color-4">
                         <a class="create d-flex" href="#" data-toggle="modal" data-target="#add_project">
                             <div class="icon bg-white">
@@ -138,7 +73,7 @@
                         <div class="kanban-cont">
                             <div class="kanban-list kanban-list-to-do">
                                 <div class="kanban-header">
-                                    <h6 class="card-title">Tasks</h6>
+                                    <h6 class="card-title">Open</h6>
                                     <div class="dropdown">
                                         <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="fas fa-ellipsis-h"></i>
@@ -154,25 +89,21 @@
                                     <div class="panel">
                                         <div class="kanban-box item-box">
                                             <div class="dropdown edit">
+                                                <a href="#" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fas fa-pencil-alt"></i>
+                                                </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <i class=""> : </i>
                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="bx bx-trash"></i> Delete</a>
                                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_card_modal"><i class="bx bx-edit mr-5"></i>Edit</a>
                                                 </div>
-                                            </div>
-                                            <div class="img-box">
+                                                </div>
+                                                 <div class="img-box">
                                                 <img src="./images/to-do-list/project-1.png" alt="">
-                                            </div>
-                                            <div class="content-box">    
+                                                 </div>
+                                                <div class="content-box">    
                                                 <h6 class="title fs-16">    {{ post.title }}     </h6>
                                                 <h6 class="title fs-16">   {{ post.comment }}      </h6> 
                                                 <h6 class="title fs-16">   {{ post.ticketsdtails }}      </h6> 
-                                                <ul>
-                                                    <li>Low: {{ priority_counts.low.count }} ({{ priority_counts.low.percentage }}%)</li>
-                                                    <li>Medium: {{ priority_counts.medium.count }} ({{ priority_counts.medium.percentage }}%)</li>
-                                                    <li>High: {{ priority_counts.high.count }} ({{ priority_counts.high.percentage }}%)</li>
-                                                    <li>Critical: {{ priority_counts.critical.count }} ({{ priority_counts.critical.percentage }}%)</li>
-                                                </ul>
                                                 {% comment %} <h6 class="title fs-16">    {{ post.piority }}      </h6>  {% endcomment %}
                                                 <i class="" data-bs-toggle="dropdown" aria-expanded="false">
                                                 {{ post.piority }}
@@ -204,7 +135,7 @@
                                 </div>
                                 <div class="kanban-wrap">
                                     <div class="panel">
-                                        <div class="kanban-box item-box" id="card1" >
+                                        {% comment %} <div class="kanban-box item-box" id="card1" >
                                             <div class="dropdown edit">
                                                 <a href="#" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-pencil-alt">  </i>
@@ -231,10 +162,10 @@
                                                     </div>
                                                 </div>
                                             </div> 
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                     <div class="panel">
-                                        <div class="kanban-box item-box">
+                                        {% comment %} <div class="kanban-box item-box">
                                             <div class="dropdown edit">
                                                 <a href="#" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-pencil-alt"></i>
@@ -261,7 +192,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                 </div>
                                 <div class="btn-add-card">
@@ -270,11 +201,11 @@
                             </div>
                             <div class="kanban-list kanban-review">
                                 <div class="kanban-header">
-                                    <h6 class="card-title">In Review</h6>
+                                    <h6 class="card-title">Resolved</h6>
                                 </div>
                                 <div class="kanban-wrap">
                                     <div class="panel">
-                                        <div class="kanban-box item-box" id="card2">
+                                        {% comment %} <div class="kanban-box item-box" id="card2">
                                             <div class="dropdown edit">
                                                 <a href="#" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
                                                     <i class="fas fa-pencil-alt"></i>
@@ -301,7 +232,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                 </div>
                                 <div class="btn-add-card">
@@ -310,38 +241,10 @@
                             </div>
                             <div class="kanban-list kanban-approved">
                                 <div class="kanban-header">
-                                    <h6 class="card-title">Approved</h6>
+                                    <h6 class="card-title">Closed</h6>
                                 </div>
                                 <div class="kanban-wrap">
                                     <div class="panel">
-                                        <div class="kanban-box item-box" id="card3">
-                                            <div class="dropdown edit">
-                                                <a href="#" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fas fa-pencil-alt"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#delete_project"><i class="bx bx-trash"></i> Delete</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#edit_card_modal"><i class="bx bx-edit mr-5"></i>Edit</a>
-                                                </div>
-                                            </div>
-                                            <div class="img-box">
-                                                <img src="./images/to-do-list/project-4.png" alt="">
-                                            </div>
-                                            <div class="content-box">
-                                                <h6 class="title fs-16">Food Website hero area</h6>
-                                                <div class="progress skill-progress mt-15 mb-15" style="height:7px;">
-                                                    <div class="progress-bar progress-animated" style="width: 78%; height:7px;" role="progressbar">
-                                                        <span class="sr-only">78% Complete</span>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex justify-content-between">
-                                                    <div class="link"><a href="#"><i class="fas fa-paperclip"></i></a></div>
-                                                    <div class="time">
-                                                        <p class="font-main mb-0"><i class="far fa-clock"></i>Due in 5 days</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                                 <div class="btn-add-card">
@@ -596,22 +499,6 @@
                             <div class="col-md-12 col-xl-10 mb-0">
                                 <div class="row">
                                     <div class="col-md-12 col-xl-4 mb-0">
-                                        <div class="form-group"> <label class="form-label">From:</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class='bx bx-calendar'></i> </div>
-                                                </div><input class="form-control fc-datepicker" placeholder="DD-MM-YYYY" type="text"> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-xl-4 mb-0">
-                                        <div class="form-group"> <label class="form-label">To:</label>
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <div class="input-group-text"><i class='bx bx-calendar'></i> </div>
-                                                </div><input class="form-control fc-datepicker" placeholder="DD-MM-YYYY" type="text"> </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-xl-4 mb-0">
                                         <div class="form-group"> <label class="form-label">Select Priority:</label> <select id="priorityFilter" name="attendance" class="form-control custom-select select2 select2-hidden-accessible" data-placeholder="Select Priority" tabindex="-1" aria-hidden="true"
                                                 data-select2-id="select2-data-16-akyu"><option label="Select Priority" data-select2-id="select2-data-18-ezae"></option> <option value="critical">Critical</option> </option> <option value="high">High</option> <option value="medium">Medium</option> <option value="low">Low</option> </select>
                                             <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-17-6y8j" style="width: 100%;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-attendance-ws-container" aria-controls="select2-attendance-ws-container"><span class="select2-selection__rendered" id="select2-attendance-ws-container" role="textbox" aria-readonly="true" title="Select Priority"></span>
@@ -649,7 +536,7 @@
                                                     <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0" aria-controls="task-profile" rowspan="1" colspan="1" style="width: 87.9844px;">Start Date</th>
                                                     <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0" aria-controls="task-profile" rowspan="1" colspan="1" style="width: 87.9844px;">Deadline</th>
                                                     <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0" aria-controls="task-profile" rowspan="1" colspan="1" style="width: 71.875px;">Progress</th>
-                                                    <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0" aria-controls="task-profile" rowspan="1" colspan="1" style="width: 110.719px;">Work Status</th>
+                                                    {% comment %} <th class="border-bottom-0 sorting fs-14 font-w500" tabindex="0" aria-controls="task-profile" rowspan="1" colspan="1" style="width: 110.719px;">Work Status</th> {% endcomment %}
                                                     <th class="border-bottom-0 sorting_disabled fs-14 font-w500" rowspan="1" colspan="1" style="width: 145.391px;">Actions</th>
                                                 </tr>
                                             </thead>
@@ -671,7 +558,7 @@
                                                             <div class="progress-bar bg-primary w-30"></div>
                                                         </div>
                                                     </td>
-                                                    <td><span class="badge badge-warning">On hold</span></td>
+                                                    {% comment %} <td><span class="badge badge-warning">On hold</span></td> {% endcomment %}
                                                     <td>
                                                         <div class="dropdown">
                                                             <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -857,88 +744,155 @@
 </div>
 <!-- END MAIN CONTENT -->
 
-<!-- Chart Part -->
 
-<div class="row">
-<div class="col-6 col-md-12">
-    <!-- CUSTOMERS CHART -->
-    <div class="box f-height">
-        <div class="box-header d-flex justify-content-between">
-            <h3 class="mt-9 fs-22">Project Statistics</h3>
-            <ul class="card-list mb-0">
-                <li class="custom-label"><span></span>Complete</li>
-                <li class="custom-label"><span></span>Doing</li>
-            </ul>
-        </div>
-        <div class="box-body pt-20">
-            <div id="customer-chart"></div>
-        </div>
-    </div>
-    <!-- END CUSTOMERS CHART -->
-</div>
 
-<!--  new div  --> 
-<div class="col-6 col-md-12">
-    <div class="box">
-        <div class="box-header">
-            <div class="me-auto">
-                <h4 class="card-title fs-22">Priority Chart</h4>
-                <p class="fs-14 mt-4">This are the details</p>
-            </div>
-        </div>
-        <div class="box-body pt-0">
-            <div class="row">
-                <div class="col-6 col-xl-12 col-md-6 col-sm-12 w-sm-100 mb-0">
-                    <ul class="box-list mt-25 pr-60">
-                        <li><span class="bg-blue square"></span>Priority 1<span>25%</span></li>
-                        <li><span class="bg-success square"></span>Priority 7<span>18%</span></li>
-                        <li><span class="bg-warning square"></span>Priority 3<span>17%</span></li>
-                        <li><span class="bg-blue square"></span>Priority 4<span>12.50%</span></li>
-                        <li><span class="bg-success square"></span>Priority 5<span>12.50%</span></li>
-                        <li><span class="bg-warning square"></span>Priority 6<span>12.50%</span></li>
-                    </ul>
+<!-- MAIN CONTENT -->
+<div class="main">
+ <!-- Chart Part -->
+ <div class="row">
+    <!-- Priority Bar Chart -->
+    <div class="col-6 col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="me-auto">
+                    <h4 class="card-title fs-22">Priority Bar Chart</h4>
+                    <p class="fs-14 mt-4">These are the priority details by count</p>
                 </div>
-                <div class="col-6 col-xl-12 col-md-6 col-sm-12 w-sm-100 mb-0">
-                    <!-- <canvas id="doughnut-chart" width="240" height="240"></canvas> -->
-                    <div class="canvas-container">
-                        <canvas id="chartjs-4" class="chartjs" width="100" height="100"></canvas>
-                        <div class="chart-data">
-                            <div data-percent="5" data-color="#3C21F7" data-label="Web Design"></div>
-                            <div data-percent="5" data-color="#00BC8B" data-label="UX/UI Design"></div>
-                            <div data-percent="5" data-color="#FFB800" data-label="Graphics Design"></div>
-                            <div data-percent="5" data-color="#00ECCC" data-label="Motion Design"></div>
-                            <div data-percent="5" data-color="#EF7F5A" data-label="Brand Identity"></div>
-                            <div data-percent="75" data-color="#5D45FB" data-label="Others"></div>
+            </div>
+            <div class="box-body pt-0">
+                <div class="row">
+                    <div class="col-3">
+                        <ul class="box-list mt-25 pr-60">
+                            <li><span class="bg-blue square"></span>Low<span>({{ priority_counts.low.count }})</span></li>
+                            <li><span class="bg-success square"></span>Medium<span>({{ priority_counts.medium.count }})</span></li>
+                            <li><span class="bg-warning square"></span>High<span>({{ priority_counts.high.count }})</span></li>
+                            <li><span class="bg-blue square"></span>Critical<span>({{ priority_counts.critical.count }})</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-9">
+                        <div class="canvas-container">
+                            <canvas id="priority-bar-chart" width="100" height="100"></canvas>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Priority Pie Chart -->
+    <div class="col-6 col-md-12">
+        <div class="box">
+            <div class="box-header">
+                <div class="me-auto">
+                    <h4 class="card-title fs-22">Priority Chart</h4>
+                    <p class="fs-14 mt-4">These are the details</p>
+                </div>
+            </div>
+            <div class="box-body pt-0">
+                <div class="row">
+                    <div class="col-6 col-xl-12 col-md-6 col-sm-12 w-sm-100 mb-0">
+                        <ul class="box-list mt-25 pr-60">
+                            <li><span class="bg-blue square"></span>Low<span>({{ priority_counts.low.percentage }}%)</span></li>
+                            <li><span class="bg-success square"></span>Medium<span>({{ priority_counts.medium.percentage }}%)</span></li>
+                            <li><span class="bg-warning square"></span>High<span>({{ priority_counts.high.percentage }}%)</span></li>
+                            <li><span class="bg-blue square"></span>Critical<span>({{ priority_counts.critical.percentage }}%)</span></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-xl-12 col-md-6 col-sm-12 w-sm-100 mb-0">
+                        <div class="canvas-container">
+                            <canvas id="chartjs-4" class="chartjs" width="100" height="100"></canvas>
+                            <div class="chart-data">
+                                <div data-percent="{{ priority_counts.low.percentage }}" data-color="#3C21F7" data-label="Low"></div>
+                                <div data-percent="{{ priority_counts.medium.percentage }}" data-color="#00BC8B" data-label="Medium"></div>
+                                <div data-percent="{{ priority_counts.high.percentage }}" data-color="#FFB800" data-label="High"></div>
+                                <div data-percent="{{ priority_counts.critical.percentage }}" data-color="#7321fc" data-label="Critical"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
 </div>
+<!-- END MAIN CONTENT -->
+
+
+
+
+
+
+{% comment %} <ul>
+    <li>Low: {{ priority_counts.low.count }} ({{ priority_counts.low.percentage }}%)</li>
+    <li>Medium: {{ priority_counts.medium.count }} ({{ priority_counts.medium.percentage }}%)</li>
+    <li>High: {{ priority_counts.high.count }} ({{ priority_counts.high.percentage }}%)</li>
+    <li>Critical: {{ priority_counts.critical.count }} ({{ priority_counts.critical.percentage }}%)</li>
+</ul> {% endcomment %}
 
 
 
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const priorityFilter = document.getElementById("priorityFilter");
-    const tableRows = document.querySelectorAll("#task-profile tbody tr");
-
-    priorityFilter.addEventListener("change", function() {
-        const selectedPriority = priorityFilter.value;
-
-        tableRows.forEach(row => {
-            const rowPriority = row.querySelector("td:nth-child(3) span").textContent.trim();
-
-            if (selectedPriority === "" || rowPriority === selectedPriority) {
-                row.style.display = ""; // Show row
-            } else {
-                row.style.display = "none"; // Hide row
+    document.addEventListener("DOMContentLoaded", function() {
+        // Filter table rows by priority
+        const priorityFilter = document.getElementById("priorityFilter");
+        const tableRows = document.querySelectorAll("#task-profile tbody tr");
+    
+        priorityFilter.addEventListener("change", function() {
+            const selectedPriority = priorityFilter.value;
+    
+            tableRows.forEach(row => {
+                const rowPriority = row.querySelector("td:nth-child(3) span").textContent.trim();
+    
+                if (selectedPriority === "" || rowPriority === selectedPriority) {
+                    row.style.display = ""; // Show row
+                } else {
+                    row.style.display = "none"; // Hide row
+                }
+            });
+        });
+    
+        // Bar chart for priority counts using Chart.js
+        const priorityData = {
+            low: {{ priority_counts.low.count }},
+            medium: {{ priority_counts.medium.count }},
+            high: {{ priority_counts.high.count }},
+            critical: {{ priority_counts.critical.count }}
+        };
+    
+        const ctx = document.getElementById('priority-bar-chart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Low', 'Medium', 'High', 'Critical'],
+                datasets: [{
+                    label: 'Priority Count',
+                    data: [priorityData.low, priorityData.medium, priorityData.high, priorityData.critical],
+                    backgroundColor: ['#3C21F7', '#00BC8B', '#FFB800', '#7321fc']
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Tasks'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Priority Levels'
+                        }
+                    }
+                }
             }
         });
     });
-});
 </script>
+    
+
 
 {% endblock %}
